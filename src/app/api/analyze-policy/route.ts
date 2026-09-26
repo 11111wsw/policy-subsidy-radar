@@ -23,8 +23,8 @@ export async function POST(request: NextRequest) {
     const buffer = Buffer.from(await file.arrayBuffer());
     let fileText = "";
     if (file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf")) {
-      // @ts-ignore — pdf-parse 1.x 无 TS 类型
-      const { default: pdf } = await import("pdf-parse");
+      // @ts-ignore — 直接引用 pdf-parse 核心解析模块，绕过 index.js 的测试文件依赖
+      const { default: pdf } = await import("pdf-parse/lib/pdf-parse.js");
       const data = await pdf(buffer);
       fileText = data.text;
     } else {
