@@ -15,6 +15,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { PolicyUpload } from "@/components/PolicyUpload";
 import { demoCompanies } from "@/lib/demoCompanies";
 import { policies } from "@/data/policies";
 
@@ -151,6 +152,21 @@ export default function Home() {
                   {p.name}
                 </Badge>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 上传政策文件 AI 解读 */}
+        <section className="border-t bg-zinc-50">
+          <div className="mx-auto w-full max-w-3xl px-4 py-14">
+            <h2 className="text-center text-xl font-semibold">
+              手里有政策文件？上传后 AI 直接帮你判断
+            </h2>
+            <p className="mt-2 text-center text-sm text-muted-foreground">
+              支持 PDF / TXT，AI 会提取申报条件并逐条对照企业情况
+            </p>
+            <div className="mt-6">
+              <PolicyUpload />
             </div>
           </div>
         </section>
