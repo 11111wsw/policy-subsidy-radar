@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getDemoCompany } from "@/lib/demoCompanies";
 import { CompanyProfile } from "@/lib/types";
-import { PDFParse } from "pdf-parse";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -24,10 +23,10 @@ export async function POST(request: NextRequest) {
     const buffer = Buffer.from(await file.arrayBuffer());
     let fileText = "";
     if (file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf")) {
-      const parser = new PDFParse({ data: buffer });
-      const textResult = await parser.getText();
-      fileText = textResult.text;
-      await parser.destroy();
+      // @ts-ignore — pdf-parse 1.x 无 TS 类型
+      const { default: pdf } = await import("pdf-parse");
+      const data = await pdf(buffer);
+      fileText = data.text;
     } else {
       fileText = buffer.toString("utf-8");
     }
