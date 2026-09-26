@@ -47,8 +47,7 @@ export default function Home() {
             静静躺在政策文件里
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg">
-            花 2 分钟填写企业画像，自动比对就业、创业、科技三类政策，
-            告诉你能领多少、还差什么条件、要准备哪些申报材料。
+            花 2 分钟填写企业画像，自动比对就业、创业、科技三类政策，告诉你能领多少、还差什么条件、要准备哪些申报材料。
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
