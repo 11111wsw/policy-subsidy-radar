@@ -91,8 +91,8 @@ export const policies: Policy[] = [
       "工伤保险或商业意外险保单",
     ],
     process: "先申请认定为就业见习基地，见习结束后向人社部门申报补贴。",
-    sourceName: "浙江省高校毕业生就业创业政策解读（浙江在线，2026年6月）",
-    sourceUrl: "http://cs.zjol.com.cn/kz202606/t20260612_31722833.shtml",
+    sourceName: "浙江省就业见习管理办法（浙江省人社厅，2024年12月）",
+    sourceUrl: "https://rlsbt.zj.gov.cn/art/2024/12/31/art_1229506668_2541451.html",
     fallbackAdvice:
       "未认定基地的企业先向属地人社部门申请见习基地资质；见习期间按月足额发放不低于最低工资的生活费并办理保险，留存发放凭证，见习期满后一并申报生活费、保险费和指导管理费。",
   },
