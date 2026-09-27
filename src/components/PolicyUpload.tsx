@@ -76,7 +76,7 @@ export function PolicyUpload() {
       if (useMyProfile) {
         const profileStr =
           typeof window !== "undefined"
-            ? window.sessionStorage.getItem("companyProfile")
+            ? window.sessionStorage.getItem("profile")
             : null;
         if (profileStr) {
           formData.append("profile", profileStr);
